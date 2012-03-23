@@ -2,22 +2,36 @@ Ext.define('Social.controller.Main', {
     extend: 'Ext.app.Controller',
 
     config: {
-        control: {
-            loginButton: {
-                tap: 'doLogin'
-            },
-            'button[action=logout]': {
-                tap: 'doLogout'
-            }
-        },
-
         refs: {
-            loginButton: 'button[action=login]'
+            loginForm: 'formpanel'
+        },
+        control: {
+            'formpanel btnLogin': {
+                tap: 'doLogin'
+            }
         }
     },
 
     doLogin: function() {
         // called whenever the Login button is tapped
+        
+        var form   = this.getLoginForm(),
+            values = form.getValues();
+          alert("helo");  
+        Ext.Ajax.request({
+    url: '/Events/web/app_dev.php/api/login',
+    form: 'formpanel',
+
+    callback: function(response, successful) {
+        if (successful) {
+            Ext.Msg.alert('Success', 'We got your form submission: '+response);
+        } else {
+            Ext.Msg.alert('Fail', 'Hmm, that did not work');
+        }
+    }
+});
+
+
     },
 
     doLogout: function() {

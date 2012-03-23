@@ -8,7 +8,7 @@
                     title: 'EyeOnParty.com', 
                     iconCls: 'user', 
                     xtype: 'formpanel', 
-                    url: '/login',
+                    name: 'formpanel',
                     layout: 'vbox', 
  
                     items: [ 
@@ -19,21 +19,25 @@
                             items: [ 
                                 { 
                                     xtype: 'textfield', 
-                                    label: 'Name' 
+                                    label: 'Usuario' ,
+                                    name: 'username'
                                 }, 
                                 { 
                                     xtype: 'passwordfield', 
-                                    label: 'Password' 
+                                    label: 'Clave',
+                                    name: 'password' 
+                                }, 
+                                { 
+                                    xtype: 'hiddenfield' ,
+                                    name: '_token'
                                 },
                             ] 
                         }, 
                         { 
                             xtype: 'button', 
+                            name: 'btnLogin',
                             text: 'Entrar', 
-                            ui: 'confirm', 
-                            handler: function() { 
-                                this.up('formpanel').submit();  
-                            }  
+                            ui: 'confirm'
                         }  
                     ]  
                 }  
