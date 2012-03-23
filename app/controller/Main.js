@@ -2,34 +2,33 @@ Ext.define('Social.controller.Main', {
     extend: 'Ext.app.Controller',
 
     config: {
-        refs: {
-            loginForm: 'formpanel'
-        },
+    	refs: {
+    		username: 'loginpannel fieldset textfield'
+    	},
         control: {
-            'formpanel btnLogin': {
-                tap: 'doLogin'
+            'loginpanel button': {
+                tap: 'doLogin',
+                itemtap: 'doLogin'
             }
         }
     },
 
     doLogin: function() {
         // called whenever the Login button is tapped
-        
-        var form   = this.getLoginForm(),
-            values = form.getValues();
-          alert("helo");  
-        Ext.Ajax.request({
-    url: '/Events/web/app_dev.php/api/login',
-    form: 'formpanel',
+	//	var uname = this.getUsername().getData();
 
-    callback: function(response, successful) {
-        if (successful) {
-            Ext.Msg.alert('Success', 'We got your form submission: '+response);
-        } else {
-            Ext.Msg.alert('Fail', 'Hmm, that did not work');
-        }
-    }
-});
+		Ext.Ajax.request({
+    			url: '/Eventos/web/app_dev.php/api/login',
+    			method: 'POST',
+    			params: {
+        			username: 'helo'
+    			},
+    			callback: function(response) {
+        		console.log(response.responseText);
+    	}
+}); 
+
+
 
 
     },

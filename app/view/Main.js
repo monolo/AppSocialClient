@@ -1,46 +1,23 @@
- Ext.define("Social.view.Main", {
-	     extend: 'Ext.TabPanel',
-	     config: {
-        	fullscreen: true,  
-            tabBarPosition: 'bottom',
-            items: [
-            	{ 
-                    title: 'EyeOnParty.com', 
-                    iconCls: 'user', 
-                    xtype: 'formpanel', 
-                    name: 'formpanel',
-                    layout: 'vbox', 
- 
-                    items: [ 
-                        { 
-                            xtype: 'fieldset', 
-                            title: 'Login', 
-                            instructions: 'eyeonparty.com', 
-                            items: [ 
-                                { 
-                                    xtype: 'textfield', 
-                                    label: 'Usuario' ,
-                                    name: 'username'
-                                }, 
-                                { 
-                                    xtype: 'passwordfield', 
-                                    label: 'Clave',
-                                    name: 'password' 
-                                }, 
-                                { 
-                                    xtype: 'hiddenfield' ,
-                                    name: '_token'
-                                },
-                            ] 
-                        }, 
-                        { 
-                            xtype: 'button', 
-                            name: 'btnLogin',
-                            text: 'Entrar', 
-                            ui: 'confirm'
-                        }  
-                    ]  
-                }  
-            ]
+Ext.define('Social.view.Main', {
+    extend: 'Ext.Container',
+    requires: ['Social.view.Login'],
+
+    id: 'viewport',
+
+    config: {
+        layout: {
+            type: 'card',
+            animation: {
+                duration: 300,
+                easing: 'ease-in-out',
+                type: 'slide',
+                direction: 'left'
             }
-        })
+        },
+        fullscreen: true,
+
+        items: [
+            { xtype: 'loginpanel' }
+        ]
+    }
+});

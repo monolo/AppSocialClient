@@ -1,8 +1,8 @@
 Ext.application({  
     name: 'Social',
     appFolder: 'app',
-    controller: ['Main'],
-    views: ['Main'],
+    controllers: ['Main'],
+    views: ['Main','Login'],
     launch: function() {  
        Ext.create('Social.view.Main');
         	
