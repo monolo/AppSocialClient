@@ -1,27 +1,42 @@
-Ext.define("Social.view.Main", {
-	extend: 'Ext.TabPanel',
-	
-	config: {
-	fullscreen: true,
-	tabBarPosition: 'top',
-	
-	items: [
-                {
-                    title: 'Home',
-                    iconCls: 'home',
-                    html: [
-                        '<img src="http://staging.sencha.com/img/sencha.png" />',
-                        '<h1>Welcome to Sencha Touch</h1>',
-                        "<p>You're creating the Getting Started app. This demonstrates how ",
-                        "to use tabs, lists and forms to create a simple app</p>",
-                        '<h2>Sencha Touch (2.0.0)</h2>'
-                    ].join("")
-                }
-            ,
-            {
-            	title: 'Fotos',
-            	iconCls: 'search',
-            	html: 'not much to tell yet'
+ Ext.define("Social.view.Main", {
+	     extend: 'Ext.TabPanel',
+	     config: {
+        	fullscreen: true,  
+            tabBarPosition: 'bottom',
+            items: [
+            	{ 
+                    title: 'EyeOnParty.com', 
+                    iconCls: 'user', 
+                    xtype: 'formpanel', 
+                    url: '/login',
+                    layout: 'vbox', 
+ 
+                    items: [ 
+                        { 
+                            xtype: 'fieldset', 
+                            title: 'Login', 
+                            instructions: 'eyeonparty.com', 
+                            items: [ 
+                                { 
+                                    xtype: 'textfield', 
+                                    label: 'Name' 
+                                }, 
+                                { 
+                                    xtype: 'passwordfield', 
+                                    label: 'Password' 
+                                },
+                            ] 
+                        }, 
+                        { 
+                            xtype: 'button', 
+                            text: 'Entrar', 
+                            ui: 'confirm', 
+                            handler: function() { 
+                                this.up('formpanel').submit();  
+                            }  
+                        }  
+                    ]  
+                }  
+            ]
             }
-            ]}
-        });
+        })
