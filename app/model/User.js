@@ -1,7 +1,7 @@
 Ext.define('Social.model.User', {
     extend: 'Ext.data.Model',
     config: {
-        fields: ['name', 'email', 'password']
+        fields: ['name', 'username', 'password']
     }
 });
 
