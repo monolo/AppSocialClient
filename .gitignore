@@ -1,2 +1,4 @@
 Sencha/
 .DS_Store
+.idea
+/nbproject/private/
