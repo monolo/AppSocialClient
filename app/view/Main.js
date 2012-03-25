@@ -1,6 +1,6 @@
 Ext.define('Social.view.Main', {
     extend: 'Ext.Container',
-    requires: ['Social.view.Login'],
+    requires: ['Social.view.Venues','Social.view.Login'],
 
     id: 'viewport',
 
@@ -14,10 +14,11 @@ Ext.define('Social.view.Main', {
                 direction: 'left'
             }
         },
+        title: 'Discotecas cercanas',
         fullscreen: true,
 
         items: [
-            { xtype: 'loginpanel' }
+            { xtype: 'venues' }
         ]
     }
 });

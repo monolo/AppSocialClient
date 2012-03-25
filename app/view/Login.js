@@ -7,6 +7,7 @@ Ext.define('Social.view.Login', {
     require: ['Ext.form.FieldSet'],
 
     config: {
+    	id:'loginform',
         title: 'Login',
         iconCls: 'user',
         scrollable: true,
@@ -31,6 +32,7 @@ Ext.define('Social.view.Login', {
                         },
                         {
                         	xtype: 'hiddenfield',
+                        	value : '',
                         	name: "_token"
                         }]
                     },
