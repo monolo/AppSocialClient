@@ -4,18 +4,15 @@
 Ext.define('Social.view.Venues', {
     extend: 'Ext.navigation.View',
     xtype: 'venues',
-    requires: ['Social.view.venues.List'],
+    requires: ['Social.view.venues.List','Social.view.venues.Show'],
     config: {
-        title: 'Discotecas en Barcelona',
-        iconCls: 'star',
-        scrollable: true,
+        title: 		'Clubes',
+        iconCls: 	'info',
+        scrollable:	false,
 //        styleHtmlContent: true,
-
-                items: 
-            {
+			items: {
                 xclass: 'Social.view.venues.List'
             }       
-
 		}
                 
         

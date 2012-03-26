@@ -1,10 +1,13 @@
 Ext.define('Social.view.Main', {
-    extend: 'Ext.Container',
-    requires: ['Social.view.Venues','Social.view.Login'],
+    extend: 'Ext.TabPanel',
+    requires: ['Social.view.Venues','Social.view.Login','Ext.TitleBar'],
 
     id: 'viewport',
-
+	xtype: 'main',
     config: {
+		
+		tabBarPosition: 'bottom',
+
         layout: {
             type: 'card',
             animation: {
@@ -14,7 +17,6 @@ Ext.define('Social.view.Main', {
                 direction: 'left'
             }
         },
-        title: 'Discotecas cercanas',
         fullscreen: true,
 
         items: [

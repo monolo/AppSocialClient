@@ -1,7 +1,7 @@
 Ext.application({  
     name: 'Social',
     appFolder: 'app',
-    controllers: ['Main'],
+    controllers: ['Main','Venues'],
     views: ['Main','Login','Venues'],
     models: ['Venue'],
     stores: ['Venues'],
